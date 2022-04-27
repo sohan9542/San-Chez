@@ -10,6 +10,7 @@ import Topbar from './layout/Topbar';
 
 
 import SimpleTrade from './pages/SimpleTrade';
+import Pdeals from './layout/PDeal';
 
 
 const App = () => {
@@ -27,6 +28,9 @@ const App = () => {
           <Switch>
             <Route exact path="/">
               <SimpleTrade />
+            </Route>
+            <Route  path="/p2p-deal">
+              <Pdeals />
             </Route>
 
        

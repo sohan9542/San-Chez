@@ -122,6 +122,19 @@ const Topbar = ({ setShowsidebar, showsidebar }) => {
                     </p>
                   </div>
                 </NavLink>
+                <NavLink
+                  to="/p2p-deal"
+                  activeClassName="w-full text-tr hover:text-white flex items-center text-white flex-row gap-4"
+                  className=" w-full text-tr flex hover:text-white items-center flex-row gap-4"
+                >
+                  <MdProductionQuantityLimits className=" w-5 h-5" />
+                  <div className=" flex flex-col items-start">
+                    <p>P2P Deal</p>
+                    <p className=" text-sm">
+                      Exchange tokes privately
+                    </p>
+                  </div>
+                </NavLink>
               </div>
             </div>
             <div className=" flex items-center text-tr trade gap-1 hover:text-white cursor-pointer relative">
@@ -279,9 +292,7 @@ const Topbar = ({ setShowsidebar, showsidebar }) => {
           <button className=" bg-sr px-3 rounded-md text-gray-300 w-36 py-2 mt-1 flex items-center" style={{color:"#2F8AF5"}}>
             Connect Wallet
           </button>
-          <button className="  rounded-md text-tr py-2 w-10 justify-center mt-1 flex items-center" >
-           <FiSettings className=" w-5 h-5"/>
-          </button>
+   
         </div>
        </div>
       </div>

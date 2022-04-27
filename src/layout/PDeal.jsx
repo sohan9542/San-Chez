@@ -46,7 +46,7 @@ const Pin = () => {
     </div>
   );
 };
-const SimpleTrade = () => {
+const Pdeals = () => {
   const [active, setActive] = useState(true);
   const [ibound, setIbound] = useState(1);
   const [searh, setSearh] = useState(false);
@@ -54,16 +54,15 @@ const SimpleTrade = () => {
     <div className=" min-h-screen w-full flex items-center flex-col justify-center">
       {searh === false && (
         <>
-      
-            <div className=" bg-sr w-1/3 rounded-3xl p-3">
+          <div className=" bg-sr w-1/3 rounded-3xl p-3">
               <div className=" w-full flex items-center justify-between">
                 <div className=" flex items-center gap-2">
-                
+       
                   <Link
-                    to="/limit-order"
-                    className=" font-semibold text-white cursor-pointer"
+                    to="/"
+                    className=" font-semibold text-tr hover:text-white cursor-pointer"
                   >
-                     Swap
+                    Swap
                   </Link>
                   <Link
                     to="/limit-order"
@@ -73,118 +72,75 @@ const SimpleTrade = () => {
                   </Link>
                   <Link
                     to="/p2p-deal"
-                    className=" font-semibold text-tr hover:text-white cursor-pointer"
+                    className=" font-semibold text-white cursor-pointer"
                   >
                     P2P
                   </Link>
-                  <p
-                    onClick={() => setActive(false)}
-                    className={
-                      active === false
-                        ? " font-semibold text-white cursor-pointer"
-                        : " font-semibold text-tr hover:text-white cursor-pointer"
-                    }
-                  >
-                    
-                  </p>
+              
                 </div>
                 <div className=" flex items-center gap-2">
                   <AiOutlineReload className=" text-tr w-5 h-5 cursor-pointer hover:text-white" />
                   <GoSettings className=" text-tr w-5 h-5 cursor-pointer transform rotate-90 hover:text-white" />
                 </div>
               </div>
-              <div className=" rounded-md p-3 bg-sr mt-2 relative">
-                <p className=" text-xs text-tr">You Sell</p>
+              <div className=" rounded-md px-3 py-1 bg-sr mt-2 relative">
+                <p className=" text-xs text-tr">You Pay</p>
                 <div className=" my-2 w-full flex items-center justify-between">
-                  <h1
-                    onClick={() => setSearh(true)}
-                    className=" text-white cursor-pointer font-medium text-2xl flex items-center gap-1"
-                  >
+                  <h1  onClick={() => setSearh(true)} className=" text-white cursor-pointer font-medium text-2xl flex items-center gap-1">
                     <img
                       className=" w-8 h-8 rounded-fu8"
-                      src="https://app.1inch.io/assets/images/network-logos/ethereum.svg"
+                      src="https://tokens.1inch.io/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2.png"
                       alt=""
                     />
-                    ETH <MdKeyboardArrowDown />
+                    WETH <MdKeyboardArrowDown />
                   </h1>
                   <h1 className=" text-white cursor-pointer font-medium text-2xl flex items-center gap-1">
-                    133782.263693
+                    53443432432.26
                   </h1>
                 </div>
                 <div className=" my-2 w-full flex items-center justify-between text-xs text-tr">
-                  <p>Ethereum</p>
-                  <p>~$386,594,621</p>
+                  <p>Wrapped Ether</p>
+                  <p>~$898,930,930</p>
                 </div>
               </div>
               <div className=" flex items-center justify-center w-full -m-2">
                 <BsArrowDownCircleFill className=" w-5 h-5 text-tr cursor-pointer" />
               </div>
-              <div
-                style={{ border: "1px solid rgba(255,255,255,0.1)" }}
-                className="  p-3 mt-1  rounded-md"
-              >
+              <div className=" rounded-md px-3 py-1 bg-sr mt-2 relative">
                 <p className=" text-xs text-tr">You Buy</p>
                 <div className=" my-2 w-full flex items-center justify-between">
                   <h1  onClick={() => setSearh(true)} className=" text-white cursor-pointer font-medium text-2xl flex items-center gap-1">
                     <img
                       className=" w-8 h-8 rounded-fu8"
-                      src="https://app.1inch.io/assets/images/network-logos/ethereum.svg"
+                      src="https://tokens.1inch.io/0x6b175474e89094c44da98b954eedeac495271d0f.png"
                       alt=""
                     />
-                    GRT <MdKeyboardArrowDown />
+                    DAI <MdKeyboardArrowDown />
+                  </h1>
+                  <h1 className=" text-white cursor-pointer font-medium text-2xl flex items-center gap-1">
+                    2888.710453
                   </h1>
                 </div>
-                <div
-                  style={{ border: "1px solid rgba(7, 112, 211, 0.747)" }}
-                  className=" py-3 px-2  rounded-md relative mt-3"
-                >
-                  <div className=" flex items-center justify-between w-full">
-                    <h1 className=" text-white cursor-pointer font-medium text-lg flex items-center gap-1">
-                      1Inch{" "}
-                    </h1>
-                    <h1 className=" text-white cursor-pointer font-medium text-lg flex items-center gap-1">
-                      133782.263693
-                    </h1>
-                  </div>
-                  <div className=" flex items-center justify-between">
-                    <p className=" text-xs text-tr">
-                      Tx cost 0.3434 = (~$991...{" "}
-                    </p>{" "}
-                    <p className=" text-xs text-tr">
-                      ~$2678 <span className=" text-red-300">(-99.32%)</span>
-                    </p>
-                  </div>
-                  <div className=" text-xs absolute -top-2 left-0 bg-green-600 text-white px-2 rounded-md">
-                    save $2345.43
-                  </div>
-                </div>
-                <div
-                  style={{ border: "1px solid rgba(255,255,255,0.1)" }}
-                  className=" py-3 px-2  rounded-md relative mt-2 cursor-pointer "
-                >
-                  <div className=" flex items-center justify-between w-full">
-                    <h1  className=" text-white cursor-pointer font-medium text-lg flex items-center gap-1">
-                      UniSwap
-                    </h1>
-                    <h1 className=" text-white cursor-pointer font-medium text-lg flex items-center gap-1">
-                      133782.263693
-                    </h1>
-                  </div>
-                  <div className=" flex items-center justify-between">
-                    <p className=" text-xs text-tr">
-                      Tx cost 0.3434 = (~$991...{" "}
-                    </p>{" "}
-                    <p className=" text-xs text-tr">
-                      ~$2678 <span className=" text-red-300">(-99.32%)</span>
-                    </p>
-                  </div>
+                <div className=" my-2 w-full flex items-center justify-between text-xs text-tr">
+                  <p>Dai Stablecoin</p>
+                  <p>~$2,887</p>
                 </div>
               </div>
-              <button className="  bg-sr  w-full rounded-md flex items-center justify-center py-3 text-blue-400 font-medium mt-3">
+              <div className=" rounded-md px-3 py-1 bg-sr mt-2 relative">
+                <p className=" text-xs text-tr">
+                  WETH per DAI <span className=" text-red-400">(-100%)</span>
+                </p>
+
+                <div className=" my-2 w-full flex items-center justify-between text-xs text-tr">
+                  <p className=" p-1 rounded-md bg-br cursor-pointer">-1%</p>
+                  <p className="    text-lg text-white">35.50255</p>
+                  <p className=" p-1 rounded-md bg-br cursor-pointer">-1%</p>
+                </div>
+              </div>
+              <button className="  bg-blue-400  w-full rounded-md flex items-center justify-center py-3 text-white font-medium mt-3">
                 Connect Wallet
               </button>
             </div>
-   
           <div className=" w-1/3 mt-2 px-3">
             <div className=" flex items-center justify-between text-xs text-tr mb-1">
               <p>1 ETH price</p>
@@ -203,8 +159,7 @@ const SimpleTrade = () => {
               <p>55.834983(~$19.75)</p>
             </div>
           </div>
-          {active === false && (
-            <div
+          <div
               className=" w-1/3 mt-2 px-3 py-2 rounded-3xl"
               style={{ border: "1px solid rgba(255,255,255,0.1)" }}
             >
@@ -251,7 +206,6 @@ const SimpleTrade = () => {
                 />
               </div>
             </div>
-          )}
         </>
       )}
       {searh && (
@@ -296,4 +250,4 @@ const SimpleTrade = () => {
   );
 };
 
-export default SimpleTrade;
+export default Pdeals;
