@@ -55,7 +55,7 @@ const SimpleTrade = () => {
       {searh === false && (
         <>
       
-            <div className=" bg-sr w-1/3 rounded-3xl p-3">
+            <div style={{backgroundImage:"linear-gradient(to right,#3F358E,#683188,#714B7D)"}} className="  w-1/3 rounded-3xl p-3">
               <div className=" w-full flex items-center justify-between">
                 <div className=" flex items-center gap-2">
                 
@@ -93,7 +93,7 @@ const SimpleTrade = () => {
                   <GoSettings className=" text-tr w-5 h-5 cursor-pointer transform rotate-90 hover:text-white" />
                 </div>
               </div>
-              <div className=" rounded-md p-3 bg-sr mt-2 relative">
+              <div className=" rounded-md p-3 bg-pr mt-2 relative">
                 <p className=" text-xs text-tr">You Sell</p>
                 <div className=" my-2 w-full flex items-center justify-between">
                   <h1
@@ -116,9 +116,7 @@ const SimpleTrade = () => {
                   <p>~$386,594,621</p>
                 </div>
               </div>
-              <div className=" flex items-center justify-center w-full -m-2">
-                <BsArrowDownCircleFill className=" w-5 h-5 text-tr cursor-pointer" />
-              </div>
+           
               <div
                 style={{ border: "1px solid rgba(255,255,255,0.1)" }}
                 className="  p-3 mt-1  rounded-md"
@@ -180,7 +178,7 @@ const SimpleTrade = () => {
                   </div>
                 </div>
               </div>
-              <button className="  bg-sr  w-full rounded-md flex items-center justify-center py-3 text-blue-400 font-medium mt-3">
+              <button className="  bg-pr  w-full rounded-md flex items-center justify-center py-3 text-white font-medium mt-3">
                 Connect Wallet
               </button>
             </div>
@@ -256,7 +254,7 @@ const SimpleTrade = () => {
       )}
       {searh && (
         <>
-          <div className=" bg-sr w-1/3 rounded-3xl p-3">
+          <div className=" bg-nr w-1/3 rounded-3xl p-3">
             <div className="flex items-center justify-between text-white">
               <RiArrowLeftSLine
                 onClick={() => setSearh(false)}
@@ -265,18 +263,18 @@ const SimpleTrade = () => {
               <h5>Select a token</h5>
               <div></div>
             </div>
-            <div className=" bg-sr  rounded-md flex items-center gap-3 px-3 mt-2">
+            <div className=" bg-pr  rounded-md flex items-center gap-3 pl-3 mt-2">
               <GoSearch className=" w-5 h-5 text-tr" />{" "}
               <input
                 type="text"
                 placeholder="Search By name or paste address"
-                className=" text-sm border-none text-white outline-none py-3 bg-transparent"
+                className=" text-sm border-none text-white w-full outline-none px-3 py-3 bg-transparent"
               />
             </div>
             <div className=" flex flex-col w-full mt-2 gap-2">
               {
                 currency.map((item,ind)=>(
-                  <div key={ind} className=" hover:bg-sr flex items-center justify-between px-2 rounded-md py-1 cursor-pointer">
+                  <div key={ind} className=" hover:bg-pr flex items-center justify-between px-2 rounded-md py-1 cursor-pointer">
                 <div className="flex items-center gap-2">
                   <img src={item.avatar} className=" w-10 h-10" alt="" />
                   <div>

@@ -5,9 +5,10 @@ module.exports = {
     extend: {
       colors: {
         pr: "#111E36",
-        sr: "rgba(47, 138, 245, .16)",
-        tr: "#6C86AD",
-        br:"#131823"
+        sr: "#c9c8c5",
+        tr: "#1CDCDC",
+        hr: "#e2edff",
+        nr:"#172A4B"
       }
     },
   },

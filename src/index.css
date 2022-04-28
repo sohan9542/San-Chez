@@ -3,7 +3,6 @@
 @tailwind components;
 @tailwind utilities;
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
-
 #demo-simple-select {
   overflow: hidden;
   padding: .5rem .3rem !important;
@@ -19,26 +18,164 @@
 a{
   text-decoration: none!important;
 }
-
+.tc{
+  color: #fff;
+  font-weight: 400;
+}
+.tc:hover{
+  color: white;
+}
+.hvoer_border:hover{
+  border: 2px solid #0D5FC9;
+}
+.hvr{
+  background-image:linear-gradient(to right,#3F358E,#683188,#714B7D);
+}
+.pr{
+  color: #fff;
+  border: 1px solid #0D5FC9;
+}
 p {
   margin-bottom: 0 !important;
 }
 h2,h1,h3,h4,h5,h6 {
   margin-bottom: 0 !important;
 }
-.trade_down{
-  display: none;
-}
-.trade_down:hover{
-  display: flex;
-  gap: 14px;
-  flex-direction: column;
-}
-.trade:hover .trade_down{
-  display: flex;
-  gap: 14px;
-  flex-direction: column;
 
+.an{
+  animation-name: example;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite
 }
-
+@keyframes example {
+  0%   {padding-left: 0px;}
+  50%  {padding-left: 10px;}
+  100% {padding-left: 0px;}
+}
+/* .progress-bar{
+  background-color: #0D5FC9!important;
  
+} */
+.progress1 .progress-bar{
+  background-color: #a32dda!important;
+}
+.progress2 .progress-bar{
+  background-color: #23d30c!important;
+}
+.progress3 .progress-bar{
+  background-color: #e42012!important;
+}
+.progress4 .progress-bar{
+  background-color: #fdaa0f!important;
+}
+.progress6 .progress-bar{
+  background-color: #fd0fdd!important;
+}
+.progress{
+  height: 8px!important;
+}
+.rbc-btn-group{
+  display: flex!important;
+  align-items: center!important;
+  gap: 5px!important;
+}
+.rbc-btn-group button {
+  background: #0D5FC9!important;
+  color: white!important;
+  border: none!important;
+}
+.rbc-btn-group button:hover {
+  background: #0D5FC9!important;
+
+}
+.rbc-event{
+  background: #0D5FC9!important;
+}
+
+
+::selection{
+  background: #1DAFFD;
+  color: #fff;
+}
+
+::-webkit-scrollbar{
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-thumb{
+  background-color: #1DAFFD;
+  border-radius: 8px;
+}
+input{
+  
+  border-radius: 3px;
+  color: #fff!important;
+  transition: .3s ease-in all;
+}
+select{
+  border: 1px solid rgba(255, 255, 255, 0.1)!important;
+  border-radius: 3px;
+  color: white;
+}
+option{
+  color: gray;
+}
+input::placeholder{
+  color: gray;
+}
+input:focus{
+  /* outline: 1px solid #1DAFFD!important; */
+  border: none!important;
+}
+input:hover{
+  outline: 1px solid #1DAFFD!important;
+  border: none!important;
+}
+select:focus{
+  outline: 1px solid #1DAFFD!important;
+  border: none!important;
+}
+.css-j204z7-MuiFormControlLabel-root .MuiFormControlLabel-label{
+  color: rgb(221, 216, 216);
+  font-size: 14px;
+}
+.css-1u4zpwo-MuiSvgIcon-root-MuiStepIcon-root{
+  width: 1.5em!important;
+  height: 2em!important;
+}
+.css-1h9z7r5-MuiButtonBase-root-MuiTab-root{
+  color: rgb(155, 152, 152)!important;
+}
+.css-1h9z7r5-MuiButtonBase-root-MuiTab-root.Mui-selected{
+  color: #1DAFFD!important;
+}
+button.MuiButtonBase-root.MuiPaginationItem-root.MuiPaginationItem-sizeMedium.MuiPaginationItem-outlined.MuiPaginationItem-rounded.MuiPaginationItem-page.css-19xm0h7-MuiButtonBase-root-MuiPaginationItem-root{
+  color: white!important;
+}
+.css-19xm0h7-MuiButtonBase-root-MuiPaginationItem-root.Mui-selected{
+ background-color: #1daffd63!important; 
+}
+.css-ptiqhd-MuiSvgIcon-root{
+  color: #fff!important;
+}
+.css-9l3uo3{
+  color: #fff!important;
+}
+.css-k008qs button{
+  color: #fff!important;
+}
+.css-1pz7awu-MuiButtonBase-root-MuiIconButton-root{
+  padding: 8px 15px!important;
+  font-size: 16px!important;
+}
+button.MuiButtonBase-root.MuiIconButton-root.MuiIconButton-colorInherit.MuiIconButton-sizeLarge.css-1l1167e{
+  padding: 8px 15px!important;
+  font-size: 16px!important;
+}
+text.recharts-text.recharts-cartesian-axis-tick-value{
+  font-size: 12px;
+}
+line{
+  display: none!important;
+}

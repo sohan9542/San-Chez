@@ -1,26 +1,17 @@
+import { FiPlus } from "react-icons/fi";
+import { GoThreeBars } from "react-icons/go";
+import { IoMagnet } from "react-icons/io5";
+import { BiBarChart } from "react-icons/bi"
+import logo from "../images/logo.png"
+import {Link} from "react-router-dom"
+import IconButton from '@mui/material/IconButton';
 
-import { FiSettings } from "react-icons/fi";
-
-import logo from "../images/logo.png";
-import { Link } from "react-router-dom";
-
-import { RiArrowDownSLine } from "react-icons/ri";
-import { SiProtonvpn, SiScikitlearn } from "react-icons/si";
-import { FaForumbee, FaSwimmingPool } from "react-icons/fa";
-import { MdChromeReaderMode, MdProductionQuantityLimits } from "react-icons/md";
-import {
-  GiClassicalKnowledge,
-  GiFruitTree,
-  GiLiquidSoap,
-  GiAbstract036,
-} from "react-icons/gi";
-
+import MenuItem from '@mui/material/MenuItem';
+import Menu from '@mui/material/Menu';
 import { useState } from "react";
-import { NavLink } from "react-router-dom";
-import { Fragment } from "react";
 import { Listbox, Transition } from "@headlessui/react";
 import { CheckIcon, SelectorIcon } from "@heroicons/react/solid";
-
+import { Fragment } from "react";
 const people = [
   {
     id: 1,
@@ -48,15 +39,14 @@ const people = [
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
-
 const Topbar = ({ setShowsidebar, showsidebar }) => {
   const [auth, setAuth] = useState(true);
   const [anchorEl, setAnchorEl] = useState(null);
-  const [selected, setSelected] = useState(people[3]);
+
   const handleChange = (event) => {
     setAuth(event.target.checked);
   };
-
+  const [selected, setSelected] = useState(people[3]);
   const handleMenu = (event) => {
     setAnchorEl(event.currentTarget);
   };
@@ -66,163 +56,31 @@ const Topbar = ({ setShowsidebar, showsidebar }) => {
   };
 
   return (
-    <div className=" px-3 w-full bg-pr h-20 z-40 shadow-md flex items-center ">
+    <div className="fixed top-0 left-0 px-2 lg:px-4 w-full  h-20 z-40 shadow-md flex items-center ">
       <div className="flex items-center justify-between gap-4 w-full">
-        <div className="flex w-full items-center gap-5 h-14 pl-0">
-          <Link to="/" className=" flex items-center gap-2">
+      <div className='flex w-full items-center gap-2 h-14 pl-0'>
+            { showsidebar ?  <BiBarChart onClick={() => setShowsidebar(false)} className='cursor-pointer transform rotate-90 w-7 h-7 ' style={{color:"#1CDCDC"}} />: <GoThreeBars style={{color:"#1CDCDC"}} onClick={() => setShowsidebar(true)} className='cursor-pointer w-7 h-7 '/>}
+            <Link to="/">
             <img
-              className="h-12 w-auto cursor-pointer"
-              src={logo}
-              style={{ objectFit: "contain" }}
-              alt="Workflow"
-            />
-            <h1 className=" font-bold text-white text-2xl">SolFi</h1>
-          </Link>
-          <div className=" flex items-center gap-3">
-            <div className=" flex items-center text-tr trade gap-1 hover:text-white cursor-pointer relative">
-              Trade <RiArrowDownSLine />
-              <div className=" absolute top-6 bg-br rounded-md w-80 flex flex-col  trade_down h-auto z-50 left-0 p-3">
-                <NavLink
-                  to="/"
-                  exact
-                  activeClassName="w-full text-tr hover:text-white flex items-center text-white flex-row gap-4"
-                  className=" w-full text-tr hover:text-white flex items-center flex-row gap-4"
-                >
-                  <MdChromeReaderMode className=" w-5 h-5" />
-                  <div className=" flex flex-col items-start">
-                    <p>Simple Mode</p>
-                    <p className=" text-sm">
-                      The most user friendly way to trade
-                    </p>
-                  </div>
-                </NavLink>
-                <NavLink
-                  to="/classic-mode"
-                  activeClassName="w-full text-tr hover:text-white flex items-center text-white flex-row gap-4"
-                  className=" w-full text-tr flex hover:text-white items-center flex-row gap-4"
-                >
-                  <GiClassicalKnowledge className=" w-5 h-5" />
-                  <div className=" flex flex-col items-start">
-                    <p>Classic Mode</p>
-                    <p className=" text-sm">
-                      Take advantage of all familiar tools
-                    </p>
-                  </div>
-                </NavLink>
-                <NavLink
-                  to="/limit-order"
-                  activeClassName="w-full text-tr hover:text-white flex items-center text-white flex-row gap-4"
-                  className=" w-full text-tr flex hover:text-white items-center flex-row gap-4"
-                >
-                  <MdProductionQuantityLimits className=" w-5 h-5" />
-                  <div className=" flex flex-col items-start">
-                    <p>Limit order</p>
-                    <p className=" text-sm">
-                      Schedule a swap to get the best price
-                    </p>
-                  </div>
-                </NavLink>
-                <NavLink
-                  to="/p2p-deal"
-                  activeClassName="w-full text-tr hover:text-white flex items-center text-white flex-row gap-4"
-                  className=" w-full text-tr flex hover:text-white items-center flex-row gap-4"
-                >
-                  <MdProductionQuantityLimits className=" w-5 h-5" />
-                  <div className=" flex flex-col items-start">
-                    <p>P2P Deal</p>
-                    <p className=" text-sm">
-                      Exchange tokes privately
-                    </p>
-                  </div>
-                </NavLink>
-              </div>
+                    className="h-12 w-auto cursor-pointer"
+                    src={logo}
+                    alt="Workflow"
+
+                /></Link>                
             </div>
-            <div className=" flex items-center text-tr trade gap-1 hover:text-white cursor-pointer relative">
-              DAO <RiArrowDownSLine />
-              <div className=" absolute top-6 bg-br rounded-md w-60 flex flex-col  trade_down h-auto z-50 left-0 p-3">
-                <NavLink
-                  to="/stacking"
-                  exact
-                  activeClassName="w-full text-tr hover:text-white flex items-center text-white flex-row gap-4"
-                  className=" w-full text-tr hover:text-white flex items-center flex-row gap-4"
-                >
-                  <GiFruitTree className=" w-5 h-5" />
-
-                  <p>Stacking</p>
-                </NavLink>
-                <NavLink
-                  to="/liquidity-protocol"
-                  activeClassName="w-full text-tr hover:text-white flex items-center text-white flex-row gap-4"
-                  className=" w-full text-tr flex hover:text-white items-center flex-row gap-4"
-                >
-                  <GiLiquidSoap className=" w-5 h-5" />
-
-                  <p>Liquidy Protocol</p>
-                </NavLink>
-                <NavLink
-                  to="/aggre-protocol"
-                  activeClassName="w-full text-tr hover:text-white flex items-center text-white flex-row gap-4"
-                  className=" w-full text-tr flex hover:text-white items-center flex-row gap-4"
-                >
-                  <SiProtonvpn className=" w-5 h-5" />
-
-                  <p>Aggregation protocol</p>
-                </NavLink>
-
-                <NavLink
-                  to="/forum"
-                  activeClassName="w-full text-tr hover:text-white flex items-center text-white flex-row gap-4"
-                  className=" w-full text-tr flex hover:text-white items-center flex-row gap-4"
-                >
-                  <FaForumbee className=" w-5 h-5" />
-
-                  <p>Forum</p>
-                </NavLink>
-              </div>
-            </div>
-            <div className=" flex items-center text-tr trade gap-1 hover:text-white cursor-pointer relative">
-              Earn <RiArrowDownSLine />
-              <div className=" absolute top-6 bg-br rounded-md w-52 flex flex-col  trade_down h-auto z-50 left-0 p-3">
-                <NavLink
-                  to="/stratigies"
-                  exact
-                  activeClassName="w-full text-tr hover:text-white flex items-center text-white flex-row gap-4"
-                  className=" w-full text-tr hover:text-white flex items-center flex-row gap-4"
-                >
-                  <GiAbstract036 className=" w-5 h-5" />
-
-                  <p>Stratigies</p>
-                </NavLink>
-                <NavLink
-                  to="/pools"
-                  activeClassName="w-full text-tr hover:text-white flex items-center text-white flex-row gap-4"
-                  className=" w-full text-tr flex hover:text-white items-center flex-row gap-4"
-                >
-                  <FaSwimmingPool className=" w-5 h-5" />
-
-                  <p>Pools</p>
-                </NavLink>
-                <NavLink
-                  to="/earnings"
-                  activeClassName="w-full text-tr hover:text-white flex items-center text-white flex-row gap-4"
-                  className=" w-full text-tr flex hover:text-white items-center flex-row gap-4"
-                >
-                  <SiScikitlearn className=" w-5 h-5" />
-
-                  <p>Earnings</p>
-                </NavLink>
-              </div>
-            </div>
-          </div>
-        </div>
-
-       <div>
-       <div className=" flex items-center  gap-2">
-          <Listbox value={selected} onChange={setSelected}>
+        <div className="  items-center hidden lg:flex justify-end gap-4">
+          {/* <div>
+            <button className=" bg-nr text-white py-2 px-3 rounded-md flex items-center gap-1">
+              <FiPlus />
+              
+            </button>
+            
+          </div> */}
+           <Listbox value={selected} onChange={setSelected}>
             {({ open }) => (
               <>
                 <div className="mt-1 relative">
-                  <Listbox.Button className="relative w-40 bg-sr  border-none rounded-md  pl-3 pr-10 py-2 text-left cursor-default  sm:text-sm">
+                  <Listbox.Button style={{backgroundImage:"linear-gradient(to right,#3F358E,#683188,#714B7D)"}} className="relative w-40  border-none rounded-md  pl-3 pr-10 py-2 text-left cursor-default  sm:text-sm">
                     <span className="flex items-center">
                       <img
                         src={selected.avatar}
@@ -289,12 +147,60 @@ const Topbar = ({ setShowsidebar, showsidebar }) => {
               </>
             )}
           </Listbox>
-          <button className=" bg-sr px-3 rounded-md text-gray-300 w-36 py-2 mt-1 flex items-center" style={{color:"#2F8AF5"}}>
+          <button style={{backgroundImage:"linear-gradient(to right,#3F358E,#683188,#714B7D)"}} className="  px-3 rounded-md text-gray-300 w-36 py-2 mt-1 flex items-center text-tr" >
             Connect Wallet
           </button>
    
         </div>
-       </div>
+        <div className="  items-center flex lg:hidden justify-end gap-1">
+   
+          <div className=" bg-nr text-white  rounded-md inline-flex  justify-center items-center gap-1">
+              <IconButton
+                size="large"
+                aria-label="account of current user"
+                aria-controls="menu-appbar"
+                aria-haspopup="true"
+                onClick={handleMenu}
+                color="inherit"
+              >
+                <FiPlus />
+              </IconButton>
+              <Menu
+                id="menu-appbar"
+                anchorEl={anchorEl}
+                anchorOrigin={{
+                  vertical: 'top',
+                  horizontal: 'right',
+                }}
+                keepMounted
+                transformOrigin={{
+                  vertical: 'top',
+                  horizontal: 'right',
+                }}
+                open={Boolean(anchorEl)}
+                onClose={handleClose}
+              >
+                 <MenuItem onClick={handleClose}><Link to="/creat-lounchpad" className=" text-tr">Launchepad</Link></MenuItem>
+                <MenuItem onClick={handleClose}><Link to="/create-fair-launch" className=" text-tr">FairLaunchpad</Link></MenuItem>
+                <MenuItem onClick={handleClose}><Link to="/token" className=" text-tr">Token</Link></MenuItem>
+                <MenuItem onClick={handleClose}><Link to="/create-lock" className=" text-tr">DXLA-Lock</Link></MenuItem>
+                <MenuItem onClick={handleClose}><Link to="/create-pinkpad" className=" text-tr">DXLA-Pad</Link></MenuItem>
+              </Menu>
+            </div>
+     
+         
+          <div>
+            <button className=" bg-nr text-white py-2 px-3 rounded-md inline-flex  justify-center items-center gap-1">
+              <IoMagnet />
+            
+            </button>
+          </div>
+          <div>
+            <button className=" bg-nr text-white py-2 px-3 text-xs rounded-md flex items-center gap-1">
+              Connect
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   );
