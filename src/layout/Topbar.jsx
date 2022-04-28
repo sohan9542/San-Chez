@@ -66,7 +66,8 @@ const Topbar = ({ setShowsidebar, showsidebar }) => {
                     src={logo}
                     alt="Workflow"
 
-                /></Link>                
+                /></Link>     
+                    <h1 className=" font-bold text-white text-2xl">SolFi</h1>           
             </div>
         <div className="  items-center hidden lg:flex justify-end gap-4">
           {/* <div>
