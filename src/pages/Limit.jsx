@@ -102,7 +102,7 @@ const data = [
     amt: 2100,
   },
 ];
-const Classic = () => {
+const Limit = () => {
   const [ibound, setIbound] = useState(1);
   const [searh, setSearh] = useState(false);
   return (
@@ -205,13 +205,13 @@ const Classic = () => {
                   <div className=" flex items-center gap-2">
                     <Link
                       to="/"
-                      className=" font-semibold text-white cursor-pointer"
+                      className=" font-semibold text-tr hover:text-white cursor-pointer"
                     >
                       Swap
                     </Link>
                     <Link
                       to="/limit-order"
-                      className=" font-semibold text-tr hover:text-white cursor-pointer"
+                      className=" font-semibold text-white  cursor-pointer"
                     >
                       Limit
                     </Link>
@@ -371,4 +371,4 @@ const Classic = () => {
   );
 };
 
-export default Classic;
+export default Limit;

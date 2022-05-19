@@ -12,6 +12,7 @@ import Dashboard from './component/Dashboard';
 import SimpleTrade from './pages/SimpleTrade';
 import Pdeals from './pages/PDeal';
 import Classic from './pages/Classic';
+import Limit from './pages/Limit';
 
 
 
@@ -40,6 +41,11 @@ const App = () => {
               <Classic />
             </Route>
            
+            <Route  path="/limit-order">
+              <Limit />
+            </Route>
+           
+
        
           </Switch>
         </div>
